@@ -1,0 +1,47 @@
+<div class="container" style="width: 50%;">
+
+    <form class="was-validated" [formGroup]="formRegistry" (ngSubmit)="onSubmit(formRegistry, template)">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email"
+            placeholder="email@com.br" required>
+          </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" formControlName="username"
+            placeholder="Username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" formControlName="password"
+            placeholder="***********" required>
+        </div>
+      
+        <div class="mb-3" style="margin-top: 20px;">
+            <button class="btn btn-primary" type="submit">Registry</button>
+        </div>
+    </form>
+
+    <alert type="success" *ngIf="showSucess">
+      <strong>DONE !</strong>    Sucess in registry...
+      <a routerLink="/login">Click here for <strong>LOGIN</strong></a>
+    </alert>
+
+</div>
+
+<!-- Login Template - AVISO -->
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Warning</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Fill in the fields correctly !
+
+      <div class="container">
+        <img src="assets/image/troll.png" width="300px" height="300px" style="margin-left: 50px;">
+      </div>
+    </div>
+</ng-template>

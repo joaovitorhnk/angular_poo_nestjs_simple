@@ -1,0 +1,46 @@
+<div class="container" style="width: 50%;">
+  <form class="was-validated" [formGroup]="fomLogin" (ngSubmit)="onSubmit(fomLogin, template)">
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" formControlName="username"
+      placeholder="Username" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="password" formControlName="password"
+       placeholder="***********" required>
+    </div>
+    
+    <div class="mb-3">
+      <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+  </form>
+  <div class="col">
+    <label class="form-label" style="margin-right: 5px;">Ainda não se cadastrou? </label>
+    <a routerLink="registry">Clique Aqui</a>
+  </div>
+
+  <alert type="danger" *ngIf="showError">
+    <strong>ERROR !</strong>    Incorrect username or passwords...
+  </alert>
+
+
+</div>
+
+<!-- Login Template - AVISO -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Warning</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Fill in the fields correctly !
+
+    <div class="container">
+      <img src="assets/image/troll.png" width="300px" height="300px" style="margin-left: 50px;">
+    </div>
+  </div>
+</ng-template>
