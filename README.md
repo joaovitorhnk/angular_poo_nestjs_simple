@@ -5,8 +5,8 @@
 
 ## Pre-Requisitos: 
 
-- 1° - Node 
-- 1° - Docker
-- 1° - Npm
+- 1° - Node - Instalar
+- 2° - Docker - Instalar
+- 3° - Npm - Instalar
 
 > Porque Docker? Bom eu usei um MYSQL bem simples e pra rodar o conteiner com Docker usando as configuração é so instalar o docker e usar o comando do README.md do backend.
